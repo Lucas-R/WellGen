@@ -2,7 +2,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "ts-node src/server.ts"
+    "dev": "ts-node src/server.ts",
+    "typeorm": "typeorm-ts-node-commonjs"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

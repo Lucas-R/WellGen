@@ -12,7 +12,7 @@ const ormconfig: DataSourceOptions = {
     synchronize: false,
     logging: false,
     entities: [path.join(__dirname, '/../**/*.entity.{js,ts}')],
-    migrations: [path.join(__dirname, '/../**/migrations/*.{js,ts}')]
+    migrations: [path.join(__dirname, '/../**/migrations/*.{js,ts}')],
 };
 
 export default ormconfig;
