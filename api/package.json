@@ -4,7 +4,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
     "typeorm": "typeorm-ts-node-commonjs",
-    "mig": "npx typeorm migration:run -d ./dist/database/config/conn.js"
+    "migrate": "npx typeorm migration:run -d ./dist/database/config/conn.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
