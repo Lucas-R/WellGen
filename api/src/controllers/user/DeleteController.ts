@@ -6,7 +6,11 @@ class DeleteController{
         try {
             const { id } = req.params;
             const del = await new DeleteService().execute(id);
-            res.status(200).send(del);
+            if(del) {
+                res.status(200).send(del);
+            } else {
+                res.status(404).send(del);
+            }
         } catch (error) {
             res.status(500).send({error: "Internal Server Error"});
         }

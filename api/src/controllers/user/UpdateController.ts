@@ -5,13 +5,17 @@ class UpdateController{
     async handle(req: Request, res: Response) {
         const { id, body } = {
             id: req.params.id,
-            body: req.body
+            body: Object.keys(req.body).length > 0 ? req.body : null
         };
 
         
         try { 
             const update = await new UpdateService().execute(id, body);
-            res.status(200).send(update);
+            if(!!body) {
+                res.status(204).send(update);
+            } else {
+                res.status(409).send(false);
+            }
         } catch (err) {
             res.status(500).send({error: "Internal Server Error"});
         }

@@ -23,28 +23,23 @@ export class CreateTableUser1740780956675 implements MigrationInterface {
                 {
                   name: 'email',
                   type: 'varchar',
-                  isNullable: true,
                   isUnique: true,
                 },
                 {
                   name: 'password',
                   type: 'varchar',
-                  isNullable: true,
                 },
                 {
                   name: 'birth',
                   type: 'date',
-                  isNullable: true,
                 },
                 {
                   name: 'birth_place',
                   type: 'varchar',
-                  isNullable: true,
                 },
                 {
                   name: 'death',
                   type: 'date',
-                  isNullable: true,
                 },
                 {
                     name: 'gender',
@@ -54,7 +49,6 @@ export class CreateTableUser1740780956675 implements MigrationInterface {
                 {
                   name: 'phone',
                   type: 'varchar',
-                  isNullable: true,
                 },
                 {
                   name: 'created_at',

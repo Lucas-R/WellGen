@@ -1,14 +1,16 @@
 import { Request, Response } from "express";
 import CreateService from "../../services/user/CreateService";
+import { UserRepository } from "../../database/repositories/user.repository";
 
 class CreateController{
     async handle(req: Request, res: Response) {
         const body = req.body;
-        try {
-            const user = await new CreateService().execute(body);
-            res.status(200).send(user);
-        } catch (error) {
-            res.status(500).send({error: "Internal Server Error"});
+        const user = await UserRepository.findOne({where: { email: body.email }});
+        if(!user) {
+            const create = await new CreateService().execute(body);
+            res.status(201).send(create);
+        } else {
+            res.status(409).send(user);
         }
     }
 }

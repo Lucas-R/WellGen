@@ -10,8 +10,6 @@ const PORT = Number(process.env.SERVER_PORT)!;
 
 conn.initialize()
     .then(() => {
-        console.log("Database initialized!");
-
         server.use(express.json());
 
         server.use("/", initRoutes);

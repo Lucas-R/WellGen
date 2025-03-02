@@ -4,7 +4,7 @@
   "description": "...",
   "version": "1.0.0",
   "scripts": {
-    "dev": "docker compose --env-file .env.dev up -d"
+    "dev": "docker compose --env-file .env.dev up --build -d"
   },
   "repository": {
     "type": "git",

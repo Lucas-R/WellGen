@@ -8,35 +8,35 @@ import {
 import { UserProps } from '../../schemas/user.schema';
 
 @Entity('user')
-export class user implements UserProps{
+export class User implements UserProps{
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
   @Column()
   name!: string;
 
-  @Column({ nullable: true })
+  @Column()
   email!: string;
 
-  @Column({ nullable: true })
+  @Column()
   password!: string;
 
-  @Column({ type: 'date' })
+  @Column()
   birth?: Date;
 
-  @Column({ nullable: true })
+  @Column()
   birth_place?: string;
 
-  @Column({ type: 'date', nullable: true })
+  @Column()
   death?: Date;
 
   @Column({
     type: 'enum',
     enum: ['male', 'female'],
   })
-  gender!: 'male' | 'female';
+  gender?: 'male' | 'female';
 
-  @Column({ nullable: true })
+  @Column()
   phone?: string;
 
   @CreateDateColumn()
