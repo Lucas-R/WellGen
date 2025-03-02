@@ -22,3 +22,5 @@ conn.initialize()
     .catch((err) => {
         console.error("Error database initialization:", err);
     });
+
+export default server;
