@@ -1,3 +1,5 @@
 import axios from "axios";
 
-export const api = axios.create({ baseURL: "http://localhost:4000" });
+const url = process.env.NEXT_PUBLIC_URL_API;
+
+export const api = axios.create({ baseURL: url });

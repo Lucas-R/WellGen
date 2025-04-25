@@ -1,6 +1,7 @@
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import "../assets/css/globals.css";
+import Template from "@/components/Template";
 
 export const metadata: Metadata = {
   title: "Well Gen",
@@ -12,15 +13,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <ClerkProvider>
       <html lang="pt-br">
         <body>
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-          {children}
+          <Template>
+            {children}
+          </Template>
         </body>
       </html>
     </ClerkProvider>
