@@ -1,0 +1,25 @@
+services:
+  backend:
+    image: wellgen-backend:1.0.0
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:3000"
+    networks:
+      - wellgen-network
+  frontend:
+    image: wellgen-frontend:1.0.0
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - wellgen-network
+
+networks:
+  wellgen-network:
+    driver: bridge
